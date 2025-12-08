@@ -1,4 +1,5 @@
-# thuytien304.github.io# 💫 About Me:
+# thuytien304.github.io
+# 💫 About Me:
 Sinh viên năm 3 FTU, chuyên ngành kinh tế quốc tế hiện mình đang học và làm việc với các công cụ phân tích dữ liệu. Ngoài học hành, mình còn thích chơi bóng chuyền và thử sức với các dự án sáng tạo. Hy vọng website này sẽ mang lại cho bạn chút gì đó dễ thương và thú vị! 🌟
 
 
