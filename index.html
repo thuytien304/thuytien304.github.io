@@ -3,26 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nguyễn Thị Thủy Tiên ✨</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <title>Thông Tin Cá Nhân</title>
+    <style>
+        /* CSS cho toàn bộ trang và nền */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f5; /* Màu nền nhẹ bên ngoài */
+            margin: 0;
+        }
 
+        /* CSS cho thẻ chứa nội dung chính (giống như "gốc pastel" của bạn) */
+        .profile-card {
+            background-color: #f7f3ff; /* Màu nền tím/pastel nhạt */
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            width: 100%;
+            max-width: 450px; /* Giới hạn chiều rộng thẻ */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Avatar và chữ "Avatar" */
+        .avatar-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .avatar {
+            width: 60px; /* Kích thước nhỏ hơn một chút so với ảnh thực tế */
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            /* Ảnh avatar giả định cho chữ "Avatar" trong hình gốc */
+            background-image: url('z7306722945015_9ac60c98f515af70f5243f60bfa0cf62.jpg'); /* Đã sử dụng ảnh của bạn */
+            background-size: cover;
+            background-position: center;
+            /* Thêm box-shadow nếu muốn hiệu ứng nổi */
+            /* box-shadow: 0 0 0 3px rgba(100, 100, 100, 0.2); */
+        }
+        
+        .avatar-text {
+            font-size: 16px;
+            color: #5d5d5d;
+            margin-top: 5px;
+        }
+
+        /* Tên */
+        .name {
+            font-size: 36px;
+            font-weight: bold;
+            color: #9c66e4; /* Màu tím nổi bật */
+            margin: 10px 0 25px 0;
+        }
+
+        /* Nội dung tiểu sử */
+        .bio p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #4a4a4a;
+            margin: 15px 0;
+            white-space: pre-line; /* Giữ định dạng xuống dòng */
+        }
+
+        /* Nút liên kết */
+        .links {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Khoảng cách giữa các nút */
+        }
+
+        .button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .facebook-btn {
+            background-color: #e0d0f7; /* Màu tím nhạt */
+            color: #6f42c1;
+        }
+
+        .facebook-btn:hover {
+            background-color: #d1bfe8;
+        }
+
+        .github-btn {
+            background-color: #e0e0e0; /* Màu xám nhạt */
+            color: #333;
+        }
+
+        .github-btn:hover {
+            background-color: #cdcdcd;
+        }
+    </style>
+</head>
 <body>
 
-    <div class="card">
-        <img src="avatar.jpg" alt="Avatar" class="avatar">
+    <div class="profile-card">
+        
+        <div class="avatar-container">
+            <div class="avatar"></div> 
+            <div class="avatar-text">
+                <img src="https://i.imgur.com/gK9o9xZ.png" alt="Avatar Icon" style="width: 20px; height: auto; vertical-align: middle;">
+                Avatar
+            </div>
+        </div>
 
-        <h1 class="name">Nguyễn Thị Thủy Tiên ✨</h1>
+        <h1 class="name">
+            Nguyễn Thị Thùy Tiên 
+            <span style="font-size: 24px;">✨</span>
+        </h1>
 
-        <p class="intro">
-            Sinh viên năm 3 ngành Kinh tế quốc tế (FTU) 💼.<br>
-            Yêu thích phân tích dữ liệu 📊, chơi bóng chuyền 🏐 và khám phá điều sáng tạo ✨.<br>
-            Chào mừng bạn đến với góc pastel xinh xắn của mình 🌸.
-        </p>
+        <div class="bio">
+            <p>
+                Sinh viên năm 3 ngành Kinh tế quốc tế (FTU) 💼.
+                <br>
+                Yêu thích phân tích dữ liệu 📊, chơi bóng chuyền 🏐 và khám phá 
+                <br>
+                điều sáng tạo ✨.
+            </p>
+            <p>
+                Chào mừng bạn đến với góc pastel xinh xắn của mình 🌸.
+            </p>
+        </div>
 
-        <div class="socials">
-            <a href="https://www.facebook.com/nguyen.t.thuy.tien.819212" target="_blank">💙 Facebook</a>
-            <a href="https://github.com/thuytien304" target="_blank">💻 GitHub</a>
+        <div class="links">
+            <a href="#" class="button facebook-btn">
+                <span style="font-size: 20px;">💙</span> Facebook
+            </a>
+            <a href="#" class="button github-btn">
+                <span style="font-size: 20px;">💻</span> GitHub
+            </a>
         </div>
     </div>
 
