@@ -1,25 +1,42 @@
-/* style.css */
+/* style.css - PHIÊN BẢN GIAO DIỆN XINH XẮN */
 
-/* 1. Thiết lập chung */
+/* 1. Thiết lập chung & Nền mới */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif; /* Font chữ tròn trịa hiện đại */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f3f0f7; /* Nền ngoài cùng */
     margin: 0;
+    
+    /* NỀN MÀU PASTEL CHUYỂN SẮC */
+    background: linear-gradient(135deg, #f3e7ff 0%, #e3fdf5 100%);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite; /* Nền chuyển động nhẹ nhàng */
 }
 
-/* 2. Thẻ chứa nội dung chính (Góc pastel) */
+@keyframes gradientBG {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+/* 2. Thẻ Profile (Hiệu ứng kính mờ) */
 .profile-card {
-    background-color: #f7f3ff; /* Màu nền tím/pastel nhạt bên trong */
-    padding: 40px 30px;
-    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.75); /* Nền trắng trong suốt */
+    backdrop-filter: blur(15px); /* Làm mờ nền phía sau */
+    -webkit-backdrop-filter: blur(15px);
+    
+    padding: 50px 40px;
+    border-radius: 35px; /* Bo góc tròn nhiều hơn */
     text-align: center;
-    width: 100%;
+    width: 90%;
     max-width: 450px; 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    
+    /* Đổ bóng mềm mại tạo cảm giác bay */
+    box-shadow: 0 15px 35px rgba(137, 137, 189, 0.15), 
+                0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.8); /* Viền trắng sáng */
 }
 
 /* 3. Avatar */
@@ -27,64 +44,71 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .avatar {
-    width: 80px; 
-    height: 80px;
-    border-radius: 50%; /* Tạo hình tròn */
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%;
     object-fit: cover; 
-    margin-bottom: 5px;
-    /* Thêm viền trắng hoặc hiệu ứng nhẹ nếu cần */
-    /* border: 4px solid #fff; */ 
-    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
+    margin-bottom: 10px;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng phóng to khi di chuột vào ảnh */
+.avatar:hover {
+    transform: scale(1.08) rotate(3deg);
 }
 
 .avatar-text {
-    font-size: 16px;
-    color: #4a4a4a;
+    font-size: 14px;
+    font-weight: 600;
+    color: #777;
+    background: rgba(255,255,255,0.6);
+    padding: 4px 12px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-.avatar-icon {
-    width: 20px;
-    height: auto;
-}
-
-/* 4. Tên */
+/* 4. Tên (Hiệu ứng chữ Gradient) */
 .name {
-    font-size: 38px;
-    font-weight: bold;
-    color: #9c66e4; /* Màu tím nổi bật */
-    margin: 10px 0 25px 0;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 15px 0 20px 0;
+    
+    /* Chữ chuyển màu Tím - Hồng */
+    background: linear-gradient(to right, #9c66e4, #ff8fb1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
 }
 
 .emoji-sparkle {
     font-size: 28px;
     vertical-align: middle;
+    -webkit-text-fill-color: initial; /* Giữ nguyên màu emoji */
 }
 
-/* 5. Tiểu sử */
+/* 5. Nội dung Bio */
 .bio p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #4a4a4a;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #555;
     margin: 10px 0;
 }
 
 .welcome-message {
     margin-top: 25px;
-    margin-bottom: 30px;
+    color: #9c66e4;
+    font-weight: 600;
 }
 
-.emoji-icon {
-    vertical-align: middle;
-}
-
-/* 6. Nút liên kết */
+/* 6. Nút bấm (Buttons) */
 .links {
     margin-top: 30px;
     display: flex;
@@ -93,39 +117,31 @@ body {
 }
 
 .button {
-    padding: 12px 30px;
+    padding: 12px 28px;
     border: none;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: bold;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.button:active {
-    transform: scale(0.98);
+.button:hover {
+    transform: translateY(-4px); /* Nút bay lên khi di chuột */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
 
 .facebook-btn {
-    background-color: #e3d3ff; /* Tím nhạt */
+    background: linear-gradient(to right, #e0c3fc, #d4bff9);
     color: #6f42c1;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
-}
-
-.facebook-btn:hover {
-    background-color: #c9b0f0;
 }
 
 .github-btn {
-    background-color: #e0e0e0; /* Xám nhạt */
-    color: #333;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
-}
-
-.github-btn:hover {
-    background-color: #cdcdcd;
+    background: linear-gradient(to right, #eaeff2, #dce4e8);
+    color: #444;
 }
